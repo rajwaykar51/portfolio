@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Distributed ML Pipeline with Hadoop & Spark</title>
+  <style>
+    /* Basic reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f9f9f9; /* light gray background */
+      font-family: Arial, sans-serif;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Container for entire page content */
+    .container {
+      max-width: 900px;  /* Adjust to preference */
+      margin: 2rem auto; /* Centers the container */
+      padding: 0 1rem;   /* Side padding */
+    }
+
+    /* Large page heading */
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+
+    /* 
+      Cards container:
+      We use .cards-container so we can apply a hover effect 
+      that scales down all cards slightly, except the hovered one.
+    */
+    .cards-container {
+      display: grid;
+      grid-template-columns: 1fr; /* single column by default */
+      gap: 1rem;
+    }
+
+    /* 
+      When hovering anywhere inside .cards-container,
+      ALL cards scale to 0.95 by default...
+    */
+    .cards-container:hover .card {
+      transform: scale(0.95);
+      transition: transform 0.3s ease;
+    }
+
+    /*
+      ...but when hovering over a specific .card,
+      THAT card remains scale(1) (unchanged).
+    */
+    .cards-container .card:hover {
+      transform: scale(1);
+      z-index: 1; /* brings hovered card above the others */
+    }
+
+    /* Individual card styling */
+    .card {
+      background-color: #fff;
+      padding: 2rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border-radius: 4px;
+      transition: transform 0.3s ease; /* smooth scale transition */
+    }
+
+    .card h2 {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      color: #333;
+    }
+
+    .card p {
+      margin-bottom: 1rem;
+    }
+
+    .card ul {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+      list-style-type: disc;
+    }
+
+    .card li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Highlighted subhead text (optional) */
+    strong {
+      color: #0077b6; 
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Back to Portfolio Link -->
+    <div style="margin-bottom: 1rem;">
+      <a href="index.html" style="text-decoration: none; color: #0077b6; font-weight: 600;">
+        ← Back to Portfolio
+      </a>
+    </div>
+
+    <!-- Page Title -->
+    <h1>
+      Distributed Machine Learning Pipeline with Hadoop and Spark<br>
+      (Real-time Data Processing and Model Deployment)
+    </h1>
+
+    <!-- Cards Container -->
+    <div class="cards-container">
+      <!-- Card: Project Overview -->
+      <div class="card">
+        <h2>Project Overview</h2>
+        <p>
+          In this project, I designed and implemented a fully operational, 
+          end-to-end machine learning pipeline capable of processing large-scale 
+          data in real-time. By leveraging the Hadoop ecosystem and Apache Spark, 
+          I created a distributed system that ingests streaming data, processes it 
+          efficiently, and applies machine learning models (Random Forest and XGBoost) 
+          for real-time predictions. The pipeline is scalable, fault-tolerant, and ready 
+          for production deployments in environments requiring low-latency analytics.
+        </p>
+      </div>
+
+      <!-- Card: Key Objectives -->
+      <div class="card">
+        <h2>Key Objectives</h2>
+        <ul>
+          <li>
+            <strong>Real-Time Data Processing</strong><br>
+            Ingest high-volume streaming data and process it in near real-time using 
+            Spark Streaming. Ensure minimal latency for time-sensitive insights.
+          </li>
+          <li>
+            <strong>Distributed ML Model Training &amp; Deployment</strong><br>
+            Leverage Spark MLlib to train and serve Random Forest and XGBoost models 
+            on large datasets. Run training and inference in a distributed manner 
+            for improved performance and scalability.
+          </li>
+          <li>
+            <strong>Production-Ready Pipeline</strong><br>
+            Integrate seamlessly with the Hadoop ecosystem (HDFS, YARN, etc.) 
+            for data storage and resource management, ensuring fault tolerance 
+            and horizontal scalability.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Card: Technical Architecture -->
+      <div class="card">
+        <h2>Technical Architecture</h2>
+        <p>
+          <strong>Data Ingestion</strong><br>
+          Streaming Source: Data is continuously fed from sources such as Kafka, Flume, or a REST endpoint producing
+          real-time logs, sensor data, or user activity streams.<br>
+          Batch Source (Optional): Historical data can be stored in HDFS or a data lake for periodic bulk ingestion 
+          and retraining.
+        </p>
+        <p>
+          <strong>Data Storage and Management (Hadoop Ecosystem)</strong><br>
+          HDFS: Used for storing raw and pre-processed data at scale.<br>
+          YARN/Resource Manager: Manages cluster resources, scheduling, and execution of Spark jobs.
+        </p>
+        <p>
+          <strong>Real-Time Processing (Spark Streaming)</strong><br>
+          Micro-Batch or Structured Streaming: Transforms incoming streaming data in near real-time.<br>
+          Data Cleaning &amp; Feature Engineering: In-stream transformations for missing values, outlier handling, 
+          feature extraction, etc.
+        </p>
+        <p>
+          <strong>Machine Learning Model Training</strong><br>
+          Spark MLlib &amp; PySpark: Implement Random Forest classifiers/regressors for distributed model training.<br>
+          XGBoost: Integrated for boosted tree models, often providing higher accuracy on complex datasets.<br>
+          Hyperparameter Tuning: Utilize Spark’s distributed capabilities for grid/random search 
+          to find optimal parameters.
+        </p>
+        <p>
+          <strong>Model Serving and Deployment</strong><br>
+          Streaming Inference: Once models are trained, new data from Spark Streaming 
+          is passed directly to the models for prediction in real-time.<br>
+          Model Versioning &amp; Management: Store trained models in a centralized registry (e.g., MLflow) 
+          or custom HDFS-based versioning.
+        </p>
+        <p>
+          <strong>Monitoring and Logging</strong><br>
+          Spark UI / YARN UI: Monitor job status and cluster resource usage.<br>
+          Application Logging: Centralized logs for auditing model accuracy, latency, throughput, and error rates.
+        </p>
+        <p>
+          <strong>Output and Visualization</strong><br>
+          Data Sink: Write processed data and predictions back to HDFS, a real-time dashboard, 
+          or a NoSQL database (HBase/Cassandra) for immediate querying.<br>
+          Metrics / Alerting: Integrate with Grafana, Prometheus, or Elasticsearch-Kibana for real-time monitoring.
+        </p>
+      </div>
+
+      <!-- Card: Implementation Details -->
+      <div class="card">
+        <h2>Implementation Details</h2>
+        <p>
+          <strong>Spark Streaming Pipeline</strong><br>
+          Created Spark Streaming jobs that run continuously, reading from a source (e.g., Kafka). 
+          Performed real-time data cleaning, normalization, and feature extraction on each micro-batch.
+        </p>
+        <p>
+          <strong>MLlib and XGBoost Integration</strong><br>
+          Random Forest (MLlib): Chosen for robust performance and interpretability.  
+          XGBoost: Utilized for improved accuracy on imbalanced or complex datasets.
+        </p>
+        <p>
+          <strong>Hyperparameter Optimization</strong><br>
+          Used Spark’s parallel processing to test different parameter combinations 
+          (e.g., <em>maxDepth, numTrees</em> in Random Forest, 
+          or <em>learningRate, maxDepth, nEstimators</em> in XGBoost).
+        </p>
+        <p>
+          <strong>Real-Time Predictions</strong><br>
+          For each new micro-batch, the pipeline automatically applies trained models 
+          to generate predictions, storing or forwarding them downstream.
+        </p>
+        <p>
+          <strong>Fault Tolerance &amp; Scalability</strong><br>
+          Employed Spark checkpointing to enable node-failure recovery and leveraged 
+          YARN for resource management and dynamic scaling.
+        </p>
+      </div>
+
+      <!-- Card: Project Highlights -->
+      <div class="card">
+        <h2>Project Highlights</h2>
+        <ul>
+          <li><strong>Low-Latency Predictions</strong>: Near real-time inference under a few seconds.</li>
+          <li><strong>High Throughput</strong>: Distributed architecture handles large data volumes effectively.</li>
+          <li><strong>Robust Model Performance</strong>: Combined Random Forest &amp; XGBoost for strong predictive accuracy.</li>
+          <li><strong>Production-Ready</strong>: Seamless Hadoop integration with minimal downtime.</li>
+          <li><strong>Streamlined Model Lifecycle</strong>: Best practices for versioning and continuous updates.</li>
+        </ul>
+      </div>
+
+      <!-- Card: Challenges Faced & Solutions -->
+      <div class="card">
+        <h2>Challenges Faced &amp; How They Were Addressed</h2>
+        <p>
+          <strong>Ensuring Real-Time Performance</strong><br>
+          Tuned Spark Streaming micro-batch intervals for optimal throughput vs. latency. 
+          Optimized executors, memory, and partitioning.
+        </p>
+        <p>
+          <strong>Data Quality &amp; Consistency</strong><br>
+          Automated checks for missing or corrupted data. Robust feature-engineering pipelines 
+          to maintain schema consistency.
+        </p>
+        <p>
+          <strong>Resource Management</strong><br>
+          Used YARN queue management to prioritize critical streaming tasks. Implemented 
+          dynamic scaling strategies to optimize resource usage.
+        </p>
+        <p>
+          <strong>Model Interpretability &amp; Monitoring</strong><br>
+          Feature importance measures in Random Forest and XGBoost for interpretability. 
+          Dashboards to track drift, accuracy, and performance metrics.
+        </p>
+      </div>
+
+      <!-- Card: Impact and Outcomes -->
+      <div class="card">
+        <h2>Impact and Outcomes</h2>
+        <ul>
+          <li><strong>Reduced Time-to-Insight</strong>: Moved from batch-only (hours/days) to real-time (seconds/minutes).</li>
+          <li><strong>Enhanced Predictive Accuracy</strong>: Advanced ML algorithms tackled large-scale, complex datasets.</li>
+          <li><strong>Scalable &amp; Extensible Pipeline</strong>: Flexible architecture for additional data sources/ML libraries.</li>
+          <li><strong>Production-Grade Reliability</strong>: Distributed processing ensures minimal downtime.</li>
+        </ul>
+      </div>
+
+      <!-- Card: Technologies & Tools -->
+      <div class="card">
+        <h2>Technologies &amp; Tools</h2>
+        <ul>
+          <li><strong>Programming &amp; ML</strong>: Python (PySpark), Spark MLlib, XGBoost</li>
+          <li><strong>Hadoop Ecosystem</strong>: HDFS, YARN for cluster management</li>
+          <li><strong>Real-Time Ingestion</strong>: Spark Streaming, Kafka (optional)</li>
+          <li><strong>Data Storage</strong>: HDFS, optionally Hive/HBase for structured access</li>
+          <li><strong>Deployment &amp; Monitoring</strong>: Spark UI, YARN UI, MLflow, Grafana/Prometheus</li>
+        </ul>
+      </div>
+
+      <!-- Card: Conclusion -->
+      <div class="card">
+        <h2>Conclusion</h2>
+        <p>
+          This project demonstrates the creation of a robust, scalable, and production-ready 
+          machine learning pipeline leveraging Hadoop and Spark. By handling both streaming 
+          and batch data, integrating advanced ML algorithms, and ensuring real-time inference, 
+          it provides a comprehensive solution for modern big data and machine learning 
+          challenges. It highlights expertise in distributed computing, real-time analytics, 
+          and end-to-end pipeline orchestration for enterprise-level applications.
+        </p>
+      </div>
+    </div><!-- /.cards-container -->
+  </div><!-- /.container -->
+
+  <footer class="animate__animated animate__fadeInUp" style="text-align: center; padding: 20px 0; position: relative; bottom: 0; width: 100%;">
+    <p>&copy; 2025 Sanket Janger. All Rights Reserved.</p>
+</footer>
+</body>
+</html>

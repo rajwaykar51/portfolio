@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Customer Segmentation</title>
+  <style>
+    /* Basic reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f9f9f9; /* light gray background */
+      font-family: Arial, sans-serif;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Container for entire page content */
+    .container {
+      max-width: 900px;  /* Adjust to preference */
+      margin: 2rem auto; /* Centers the container */
+      padding: 0 1rem;   /* Side padding */
+    }
+
+    /* Large page heading */
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+
+    /*
+      Cards container:
+      Hover effect that scales down all cards slightly,
+      except the hovered one, which remains at scale(1).
+    */
+    .cards-container {
+      display: grid;
+      grid-template-columns: 1fr; /* single column by default */
+      gap: 1rem;
+    }
+
+    .cards-container:hover .card {
+      transform: scale(0.95);
+      transition: transform 0.3s ease;
+    }
+
+    .cards-container .card:hover {
+      transform: scale(1);
+      z-index: 1; /* brings hovered card above the others */
+    }
+
+    /* Individual card styling */
+    .card {
+      background-color: #fff;
+      padding: 2rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border-radius: 4px;
+      transition: transform 0.3s ease; /* smooth scale transition */
+    }
+
+    .card h2 {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      color: #333;
+    }
+
+    .card p {
+      margin-bottom: 1rem;
+    }
+
+    .card ul {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+      list-style-type: disc;
+    }
+
+    .card li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Highlighted subhead text (optional) */
+    strong {
+      color: #0077b6; 
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Back to Portfolio Link -->
+    <div style="margin-bottom: 1rem;">
+      <a href="index.html" style="text-decoration: none; color: #0077b6; font-weight: 600;">
+        ← Back to Portfolio
+      </a>
+    </div>
+
+    <!-- Page Title -->
+    <h1>
+      Customer Segmentation<br>
+      (Data-Driven Approach to Identifying Distinct Purchasing Behaviors)
+    </h1>
+
+    <!-- Cards Container -->
+    <div class="cards-container">
+      <!-- Card: Project Overview -->
+      <div class="card">
+        <h2>Project Overview</h2>
+        <p>
+          This independent project focused on developing an automated, data-driven system 
+          to segment customers based on their purchasing behaviors. By implementing 
+          K-Means clustering and leveraging Python libraries such as Pandas and 
+          Scikit-Learn, the project turned a traditionally manual, ad-hoc segmentation 
+          process into a streamlined analytical approach. The resulting system provides 
+          marketers and sales teams with insights to tailor strategies for distinct 
+          customer groups, ultimately enhancing customer satisfaction and retention.
+        </p>
+      </div>
+
+      <!-- Card: Key Objectives -->
+      <div class="card">
+        <h2>Key Objectives</h2>
+        <ul>
+          <li>
+            <strong>Identify Distinct Customer Segments</strong><br>
+            Use quantitative data to group customers who share similar purchasing behaviors, frequency, or monetary value.
+          </li>
+          <li>
+            <strong>Automate Customer Segmentation</strong><br>
+            Transition from a manual process to an automated system that continuously updates segment assignments.
+          </li>
+          <li>
+            <strong>Generate Actionable Insights</strong><br>
+            Enable targeted marketing strategies by understanding the unique characteristics and needs of each customer cluster.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Card: Technical Approach -->
+      <div class="card">
+        <h2>Technical Approach</h2>
+        <p>
+          <strong>Data Collection &amp; Preparation</strong><br>
+          Data Sources: Transactional data including customer IDs, purchase amounts, timestamps, and product categories.<br>
+          Data Cleaning: Used Python (Pandas) to handle missing values, outliers, and inconsistent records.<br>
+          Feature Engineering: Created derived metrics (e.g., total spend, average purchase frequency) to capture customer behavior patterns.
+        </p>
+        <p>
+          <strong>Clustering Methodology</strong><br>
+          K-Means Clustering: Chosen for its simplicity and interpretability in segmenting high-dimensional customer data.<br>
+          Parameter Tuning: Used the Elbow Method and Silhouette Scores to determine the optimal number of clusters.<br>
+          Scikit-Learn: Employed Scikit-Learn’s built-in clustering functions for robust, efficient model training.
+        </p>
+        <p>
+          <strong>Segmentation Outputs</strong><br>
+          Cluster Profiles: Characterized each cluster by demographics, purchasing frequency, total spend, product preferences, etc.<br>
+          Data Visualization: Utilized Python libraries (Matplotlib, Seaborn) to depict cluster centroids, segment size, and behavior patterns.
+        </p>
+        <p>
+          <strong>Automation</strong><br>
+          Pipeline Creation: Built a reusable script that automatically ingests new data, applies clustering, and updates segment labels.<br>
+          Scheduling: Implemented a cron job or scheduler script to run the process periodically, ensuring segments stay current.
+        </p>
+      </div>
+
+      <!-- Card: Project Highlights -->
+      <div class="card">
+        <h2>Project Highlights</h2>
+        <ul>
+          <li>
+            <strong>Efficient, Data-Driven Insights</strong>: Replaced manual segmentation methods with automated clustering, allowing for real-time updates.
+          </li>
+          <li>
+            <strong>Enhanced Marketing Strategy</strong>: Marketers can now tailor campaigns to specific segments, improving conversion rates and customer engagement.
+          </li>
+          <li>
+            <strong>Scalable Solution</strong>: Designed pipeline to handle larger datasets and integrate additional features (e.g., web activity, demographics).
+          </li>
+          <li>
+            <strong>Hands-On Data Science Experience</strong>: Gained practical expertise in data manipulation, clustering algorithms, and deployment best practices.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Card: Challenges Faced & How They Were Addressed -->
+      <div class="card">
+        <h2>Challenges Faced &amp; How They Were Addressed</h2>
+        <p>
+          <strong>Data Quality and Consistency</strong><br>
+          <em>Solution</em>: Developed a preprocessing workflow in Python to unify schema and handle missing or corrupted records.
+        </p>
+        <p>
+          <strong>Determining Optimal Cluster Count</strong><br>
+          <em>Solution</em>: Utilized metrics like the Elbow Method and Silhouette Analysis to objectively find the best K value.
+        </p>
+        <p>
+          <strong>Scalability</strong><br>
+          <em>Solution</em>: Implemented modular code that can accommodate additional features and handle larger volumes of data efficiently.
+        </p>
+      </div>
+
+      <!-- Card: Impact and Outcomes -->
+      <div class="card">
+        <h2>Impact and Outcomes</h2>
+        <ul>
+          <li><strong>Improved Targeting</strong>: Businesses gained the ability to target distinct customer segments with tailored marketing campaigns, increasing overall ROI.</li>
+          <li><strong>Reduced Manual Workload</strong>: Automated workflows saved significant time spent on manual data segmentation and analysis.</li>
+          <li><strong>Actionable Insights</strong>: Clear, data-driven segment profiles offered strategic value in product promotion, cross-selling, and up-selling.</li>
+        </ul>
+      </div>
+
+      <!-- Card: Technologies & Tools -->
+      <div class="card">
+        <h2>Technologies &amp; Tools</h2>
+        <ul>
+          <li><strong>Programming Languages</strong>: Python (Pandas, NumPy, Matplotlib, Seaborn)</li>
+          <li><strong>Machine Learning</strong>: Scikit-Learn (K-Means, cluster evaluation metrics)</li>
+          <li><strong>Data Processing &amp; Automation</strong>: Python scripts and scheduling (cron jobs or similar)</li>
+          <li><strong>Version Control</strong>: Git, GitHub for code collaboration and version tracking</li>
+        </ul>
+      </div>
+
+      <!-- Card: Conclusion -->
+      <div class="card">
+        <h2>Conclusion</h2>
+        <p>
+          This project demonstrates a strong command of clustering techniques, data engineering, and
+          automation. By deploying a fully automated Customer Segmentation system using Python and
+          Scikit-Learn, you effectively modernized the way customer data is analyzed. This data-driven
+          approach not only empowers marketing and sales teams with actionable insights but also
+          showcases your proficiency in building robust, scalable analytical solutions.
+        </p>
+      </div>
+    </div><!-- /.cards-container -->
+  </div><!-- /.container -->
+
+  <footer class="animate__animated animate__fadeInUp" style="text-align: center; padding: 20px 0; position: relative; bottom: 0; width: 100%;">
+    <p>&copy; 2025 Sanket Janger. All Rights Reserved.</p>
+</footer>
+</body>
+</html>

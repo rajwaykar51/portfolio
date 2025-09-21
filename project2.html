@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Enhancing ML Model through Dynamic Feature Selection</title>
+  <style>
+    /* Basic reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f9f9f9; /* light gray background */
+      font-family: Arial, sans-serif;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Container for entire page content */
+    .container {
+      max-width: 900px;  /* Adjust to preference */
+      margin: 2rem auto; /* Centers the container */
+      padding: 0 1rem;   /* Side padding */
+    }
+
+    /* Large page heading */
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+
+    /*
+      Cards container:
+      Hover effect that scales down all cards slightly,
+      except the hovered one, which remains at scale(1).
+    */
+    .cards-container {
+      display: grid;
+      grid-template-columns: 1fr; /* single column by default */
+      gap: 1rem;
+    }
+
+    .cards-container:hover .card {
+      transform: scale(0.95);
+      transition: transform 0.3s ease;
+    }
+
+    .cards-container .card:hover {
+      transform: scale(1);
+      z-index: 1; /* brings hovered card above the others */
+    }
+
+    /* Individual card styling */
+    .card {
+      background-color: #fff;
+      padding: 2rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border-radius: 4px;
+      transition: transform 0.3s ease; /* smooth scale transition */
+    }
+
+    .card h2 {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      color: #333;
+    }
+
+    .card p {
+      margin-bottom: 1rem;
+    }
+
+    .card ul {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+      list-style-type: disc;
+    }
+
+    .card li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Highlighted subhead text (optional) */
+    strong {
+      color: #0077b6; 
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Back to Portfolio Link -->
+    <div style="margin-bottom: 1rem;">
+      <a href="index.html" style="text-decoration: none; color: #0077b6; font-weight: 600;">
+        ← Back to Portfolio
+      </a>
+    </div>
+
+    <!-- Page Title -->
+    <h1>
+      Enhancing ML Model through Dynamic Feature Selection<br>
+      (Automated Feature Selection System for Healthcare Data Prediction)
+    </h1>
+
+    <!-- Cards Container -->
+    <div class="cards-container">
+      <!-- Card: Project Overview -->
+      <div class="card">
+        <h2>Project Overview</h2>
+        <p>
+          This group project focused on developing an automated feature selection system to 
+          optimize machine learning models for healthcare data predictions. By implementing 
+          advanced feature selection algorithms and dimensionality reduction techniques, the 
+          project improved model efficiency, reduced computational costs, and enhanced key 
+          performance metrics such as accuracy, F1-score, and AUC-ROC. The system is especially 
+          tailored for healthcare datasets, which are often high-dimensional and noisy.
+        </p>
+      </div>
+
+      <!-- Card: Key Objectives -->
+      <div class="card">
+        <h2>Key Objectives</h2>
+        <ul>
+          <li>
+            <strong>Automated Feature Selection</strong><br>
+            Develop a dynamic feature selection framework to identify the most relevant 
+            features for healthcare data.
+          </li>
+          <li>
+            <strong>Dimensionality Reduction</strong><br>
+            Apply algorithms like PCA to reduce the feature space while maintaining 
+            data integrity and minimizing information loss.
+          </li>
+          <li>
+            <strong>Model Performance Improvement</strong><br>
+            Enhance key metrics such as accuracy, F1-score, and AUC-ROC across 
+            multiple ML models.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Card: Technical Approach -->
+      <div class="card">
+        <h2>Technical Approach</h2>
+        <p>
+          <strong>Dataset and Preprocessing</strong><br>
+          Data Sources: Worked with high-dimensional healthcare datasets containing demographic, 
+          diagnostic, and treatment variables.<br>
+          Preprocessing: Performed data cleaning, normalization, and encoding to ensure the dataset 
+          was consistent and ready for feature selection.
+        </p>
+        <p>
+          <strong>Feature Selection Techniques</strong><br>
+          Optimal Subset Feature Selection (OSFS): Used to identify minimal subsets of features 
+          with maximum predictive power.<br>
+          Dynamic Optimal Subset Feature Selection (DOSFS): Dynamically updated the selected features 
+          as new data was added.<br>
+          Principal Component Analysis (PCA): Reduced feature space by ~60%, eliminating redundancy 
+          and improving computational efficiency.
+        </p>
+        <p>
+          <strong>Model Development</strong><br>
+          Integrated feature selection with machine learning algorithms, including:
+        </p>
+        <ul>
+          <li>Support Vector Machines (SVM)</li>
+          <li>Logistic Regression</li>
+          <li>Decision Trees</li>
+        </ul>
+        <p>
+          Used cross-validation to validate model performance across multiple folds.
+        </p>
+        <p>
+          <strong>Performance Metrics</strong><br>
+          Accuracy: Improved by ~18%.<br>
+          F1-Score: Boosted by ~22%, ensuring a balance between precision and recall.<br>
+          AUC-ROC: Increased by ~15%, highlighting improved classification performance.
+        </p>
+        <p>
+          <strong>System Automation</strong><br>
+          Automated feature selection pipeline to dynamically adapt to evolving datasets 
+          without manual intervention.
+        </p>
+      </div>
+
+      <!-- Card: Project Highlights -->
+      <div class="card">
+        <h2>Project Highlights</h2>
+        <ul>
+          <li>
+            <strong>Significant Model Efficiency Gains</strong>: Reduced feature space by ~60%, 
+            decreasing training time while preserving data integrity.
+          </li>
+          <li>
+            <strong>Dynamic Feature Selection</strong>: Enabled the system to adapt to new data 
+            inputs, ensuring robust model predictions over time.
+          </li>
+          <li>
+            <strong>Enhanced Model Performance</strong>: Improved critical performance metrics 
+            across multiple models, demonstrating the versatility of the approach.
+          </li>
+          <li>
+            <strong>Scalable Solution</strong>: Designed the system to handle various datasets 
+            and integrate seamlessly with different ML pipelines.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Card: Challenges Faced & How They Were Addressed -->
+      <div class="card">
+        <h2>Challenges Faced &amp; How They Were Addressed</h2>
+        <p>
+          <strong>Handling High Dimensionality</strong><br>
+          Addressed computational challenges by integrating PCA and DOSFS 
+          for efficient dimensionality reduction.
+        </p>
+        <p>
+          <strong>Balancing Feature Reduction and Model Performance</strong><br>
+          Conducted rigorous testing to ensure that reducing features did not 
+          compromise predictive accuracy.
+        </p>
+        <p>
+          <strong>Algorithm Integration</strong><br>
+          Combined OSFS/DOSFS with existing ML models, optimizing compatibility 
+          and performance.
+        </p>
+      </div>
+
+      <!-- Card: Impact and Outcomes -->
+      <div class="card">
+        <h2>Impact and Outcomes</h2>
+        <ul>
+          <li>
+            <strong>Improved Predictive Accuracy</strong>: Achieved significant performance gains
+            across multiple machine learning models.
+          </li>
+          <li>
+            <strong>Streamlined Feature Selection</strong>: Reduced manual intervention through 
+            automation, increasing system scalability and adaptability.
+          </li>
+          <li>
+            <strong>Optimized Resource Usage</strong>: Lowered computational costs by decreasing 
+            the size of the feature space while maintaining model robustness.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Card: Technologies & Tools -->
+      <div class="card">
+        <h2>Technologies &amp; Tools</h2>
+        <ul>
+          <li><strong>Programming Languages</strong>: Python (Pandas, NumPy, Scikit-learn)</li>
+          <li><strong>Algorithms</strong>: OSFS, DOSFS, PCA</li>
+          <li><strong>Machine Learning Models</strong>: SVM, Logistic Regression, Decision Trees</li>
+          <li><strong>Visualization</strong>: Matplotlib, Seaborn (for feature importance &amp; performance analysis)</li>
+          <li><strong>Collaboration Tools</strong>: Jupyter Notebook, Git (version control)</li>
+        </ul>
+      </div>
+
+      <!-- Card: Conclusion -->
+      <div class="card">
+        <h2>Conclusion</h2>
+        <p>
+          This project demonstrates expertise in feature selection, dimensionality reduction, and 
+          optimizing machine learning workflows for high-dimensional healthcare datasets. By automating 
+          feature selection and improving model performance, the system provides a scalable and efficient 
+          solution for predictive analytics in healthcare, with applications in diagnostics, treatment 
+          planning, and resource allocation.
+        </p>
+      </div>
+    </div><!-- /.cards-container -->
+  </div><!-- /.container -->
+
+  <footer class="animate__animated animate__fadeInUp" style="text-align: center; padding: 20px 0; position: relative; bottom: 0; width: 100%;">
+    <p>&copy; 2025 Sanket Janger. All Rights Reserved.</p>
+</footer>
+</body>
+</html>

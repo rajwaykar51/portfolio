@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Automated ID Card Generation System</title>
+  <style>
+    /* Basic reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f9f9f9; /* light gray background */
+      font-family: Arial, sans-serif;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Container for entire page content */
+    .container {
+      max-width: 900px;  /* Adjust to preference */
+      margin: 2rem auto; /* Centers the container */
+      padding: 0 1rem;   /* Side padding */
+    }
+
+    /* Large page heading */
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+
+    /*
+      Cards container:
+      Hover effect that scales down all cards slightly,
+      except the hovered one, which remains at scale(1).
+    */
+    .cards-container {
+      display: grid;
+      grid-template-columns: 1fr; /* single column by default */
+      gap: 1rem;
+    }
+
+    .cards-container:hover .card {
+      transform: scale(0.95);
+      transition: transform 0.3s ease;
+    }
+
+    .cards-container .card:hover {
+      transform: scale(1);
+      z-index: 1; /* brings hovered card above the others */
+    }
+
+    /* Individual card styling */
+    .card {
+      background-color: #fff;
+      padding: 2rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border-radius: 4px;
+      transition: transform 0.3s ease; /* smooth scale transition */
+    }
+
+    .card h2 {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      color: #333;
+    }
+
+    .card p {
+      margin-bottom: 1rem;
+    }
+
+    .card ul {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+      list-style-type: disc;
+    }
+
+    .card li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Highlighted subhead text (optional) */
+    strong {
+      color: #0077b6; 
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Back to Portfolio Link -->
+    <div style="margin-bottom: 1rem;">
+      <a href="index.html" style="text-decoration: none; color: #0077b6; font-weight: 600;">
+        ← Back to Portfolio
+      </a>
+    </div>
+
+    <!-- Page Title -->
+    <h1>
+      Automated ID Card Generation System<br>
+      (End-to-End Web Application for Instant Card Creation)
+    </h1>
+
+    <!-- Cards Container -->
+    <div class="cards-container">
+      <!-- Card: Project Overview -->
+      <div class="card">
+        <h2>Project Overview</h2>
+        <p>
+          In this project, I developed a fully automated ID card generation system designed to
+          streamline the process of creating and issuing student and staff ID cards. By leveraging
+          C#, JavaScript, and the ASP.NET framework, this end-to-end web application allows users
+          to upload photos and personal data through an intuitive interface, immediately generating
+          professional ID cards. The solution replaced a manual, time-consuming card creation process,
+          reducing the turnaround from days to minutes while providing a secure and user-friendly
+          experience.
+        </p>
+      </div>
+
+      <!-- Card: Key Objectives -->
+      <div class="card">
+        <h2>Key Objectives</h2>
+        <ul>
+          <li>
+            <strong>Instant ID Card Generation</strong><br>
+            Enable real-time card creation by automating data upload and photo integration.
+            Provide a preview and confirmation step before finalizing the card design.
+          </li>
+          <li>
+            <strong>Streamlined Web Interface</strong><br>
+            Design an intuitive front-end for both administrative staff and end-users. 
+            Ensure cross-platform compatibility and a responsive layout for various browsers.
+          </li>
+          <li>
+            <strong>Secure Data Handling</strong><br>
+            Implement role-based access control to manage sensitive information. 
+            Maintain a secure environment for storing personal details and photographs.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Card: Technical Architecture -->
+      <div class="card">
+        <h2>Technical Architecture</h2>
+        <p>
+          <strong>Front-End Development</strong><br>
+          JavaScript &amp; HTML/CSS for creating responsive UI components.<br>
+          AJAX/Fetch Calls for seamless communication with server-side APIs.
+        </p>
+        <p>
+          <strong>Server-Side Processing</strong><br>
+          ASP.NET (C#) RESTful endpoints to handle user data, image uploads, and ID card generation.<br>
+          Data Validation for acceptable file types (image) and mandatory fields.
+        </p>
+        <p>
+          <strong>Database Management</strong><br>
+          SQL Server for storing user details, card templates, and logs.<br>
+          Entity Framework to map data models and manage CRUD operations.
+        </p>
+        <p>
+          <strong>Card Rendering &amp; Output</strong><br>
+          Dynamic Templates: Merged user data and images into pre-designed ID card layouts.<br>
+          PDF/Print Export: Option to download or print high-quality ID cards in PDF format.
+        </p>
+      </div>
+
+      <!-- Card: Implementation Details -->
+      <div class="card">
+        <h2>Implementation Details</h2>
+        <p>
+          <strong>End-to-End Workflow</strong><br>
+          <em>Data Upload:</em> Users input information and upload a photo.<br>
+          <em>Validation &amp; Processing:</em> The system ensures data integrity and links the photo to the correct record.<br>
+          <em>Template Generation:</em> ASP.NET merges data into a card template (with fields for name, ID number, photo, etc.).<br>
+          <em>Preview &amp; Approval:</em> Administrators review the card before final confirmation.<br>
+          <em>Final Output:</em> A completed ID card is generated for download or print.
+        </p>
+        <p>
+          <strong>Security Measures</strong><br>
+          User Roles &amp; Permissions: Only authorized personnel can create or modify ID cards.<br>
+          Secure Storage: Sensitive data encryption and secure file storage for photos.
+        </p>
+        <p>
+          <strong>Performance Optimization</strong><br>
+          Caching Strategy: Used in-memory caching to speed up repeated database lookups.<br>
+          Scalability: Ensured concurrent usage during peak registration times without service degradation.
+        </p>
+      </div>
+
+      <!-- Card: Project Highlights -->
+      <div class="card">
+        <h2>Project Highlights</h2>
+        <ul>
+          <li>
+            <strong>Significant Time Savings</strong>: Reduced ID card generation from days to minutes, 
+            greatly improving operational efficiency.
+          </li>
+          <li>
+            <strong>User-Friendly Interface</strong>: The streamlined front-end experience minimized training 
+            requirements and user errors.
+          </li>
+          <li>
+            <strong>End-to-End Functionality</strong>: Handled data upload, validation, card rendering, and 
+            final printing within one application.
+          </li>
+          <li>
+            <strong>Hands-On Full-Stack Expertise</strong>: Gained experience in front-end, back-end, and 
+            database development within ASP.NET.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Card: Challenges Faced & How They Were Addressed -->
+      <div class="card">
+        <h2>Challenges Faced &amp; How They Were Addressed</h2>
+        <p>
+          <strong>File Handling &amp; Image Processing</strong><br>
+          <em>Solution</em>: Implemented robust server-side checks for file types, size limits, and dynamic resizing 
+          to maintain consistent image quality.
+        </p>
+        <p>
+          <strong>Template Design Flexibility</strong><br>
+          <em>Solution</em>: Created modular templates allowing for quick layout adjustments without altering 
+          underlying logic.
+        </p>
+        <p>
+          <strong>Access Control</strong><br>
+          <em>Solution</em>: Used ASP.NET Identity or role-based authorization to ensure only authorized 
+          personnel create or manage ID cards.
+        </p>
+      </div>
+
+      <!-- Card: Impact and Outcomes -->
+      <div class="card">
+        <h2>Impact and Outcomes</h2>
+        <ul>
+          <li><strong>Increased Efficiency</strong>: Eliminated manual workflows, freeing staff for other tasks.</li>
+          <li><strong>Improved Accuracy</strong>: Automated validation reduced common human errors in data entry.</li>
+          <li><strong>Professional Standardization</strong>: Maintained consistent branding and design across all ID cards.</li>
+        </ul>
+      </div>
+
+      <!-- Card: Technologies & Tools -->
+      <div class="card">
+        <h2>Technologies &amp; Tools</h2>
+        <ul>
+          <li><strong>Framework</strong>: ASP.NET (C#)</li>
+          <li><strong>Front-End</strong>: JavaScript, HTML/CSS, AJAX/Fetch</li>
+          <li><strong>Database</strong>: SQL Server (Entity Framework ORM)</li>
+          <li><strong>Code Management</strong>: Visual Studio, Git for version control</li>
+          <li><strong>Deployment</strong>: IIS or cloud-based hosting (Azure App Service)</li>
+        </ul>
+      </div>
+
+      <!-- Card: Conclusion -->
+      <div class="card">
+        <h2>Conclusion</h2>
+        <p>
+          This Automated ID Card Generation System showcases a comprehensive end-to-end development process, 
+          combining front-end design, secure server-side logic, and database integration using ASP.NET, 
+          C#, and JavaScript. By replacing labor-intensive manual workflows with automated ID card creation, 
+          the project demonstrates technical proficiency, strong problem-solving skills, and a keen understanding 
+          of modern web development best practices.
+        </p>
+      </div>
+    </div><!-- /.cards-container -->
+  </div><!-- /.container -->
+
+  <footer class="animate__animated animate__fadeInUp" style="text-align: center; padding: 20px 0; position: relative; bottom: 0; width: 100%;">
+    <p>&copy; 2025 Sanket Janger. All Rights Reserved.</p>
+</footer>
+</body>
+</html>

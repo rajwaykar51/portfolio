@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Retail Analytics Dashboard: Sales & Inventory</title>
+  <style>
+    /* Basic reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f9f9f9; /* light gray background */
+      font-family: Arial, sans-serif;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Container for entire page content */
+    .container {
+      max-width: 900px;  /* Adjust to preference */
+      margin: 2rem auto; /* Centers the container */
+      padding: 0 1rem;   /* Side padding */
+    }
+
+    /* Large page heading */
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+
+    /*
+      Cards container:
+      Hover effect that scales down all cards slightly,
+      except the hovered one, which remains at scale(1).
+    */
+    .cards-container {
+      display: grid;
+      grid-template-columns: 1fr; /* single column by default */
+      gap: 1rem;
+    }
+    .cards-container:hover .card {
+      transform: scale(0.95);
+      transition: transform 0.3s ease;
+    }
+    .cards-container .card:hover {
+      transform: scale(1);
+      z-index: 1; /* brings hovered card above the others */
+    }
+
+    /* Individual card styling */
+    .card {
+      background-color: #fff;
+      padding: 2rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border-radius: 4px;
+      transition: transform 0.3s ease; /* smooth scale transition */
+    }
+
+    .card h2 {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      color: #333;
+    }
+
+    .card p {
+      margin-bottom: 1rem;
+    }
+
+    .card ul {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+      list-style-type: disc;
+    }
+
+    .card li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Highlighted subhead text (optional) */
+    strong {
+      color: #0077b6; 
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Back to Portfolio Link -->
+    <div style="margin-bottom: 1rem;">
+      <a href="index.html" style="text-decoration: none; color: #0077b6; font-weight: 600;">
+        ← Back to Portfolio
+      </a>
+    </div>
+
+    <!-- Page Title -->
+    <h1>
+      Retail Analytics Dashboard: Sales &amp; Inventory<br>
+      (Optimizing Sales Tracking and Inventory Management)
+    </h1>
+
+    <!-- Cards Container -->
+    <div class="cards-container">
+      <!-- Card: Project Overview -->
+      <div class="card">
+        <h2>Project Overview</h2>
+        <p>
+          This independent project focused on designing and implementing a comprehensive
+          retail analytics dashboard using Power BI to streamline sales tracking and
+          inventory management. By leveraging SQL, Python, and Power BI, the solution
+          provided real-time visualizations and actionable insights, empowering retail
+          stores to make data-driven decisions. The project combined database management,
+          data processing, and advanced analytics to optimize store operations, predict
+          future trends, and improve inventory control.
+        </p>
+      </div>
+
+      <!-- Card: Key Objectives -->
+      <div class="card">
+        <h2>Key Objectives</h2>
+        <ul>
+          <li>
+            <strong>Sales Performance Tracking</strong><br>
+            Provide insights into sales patterns, including peak sales times,
+            high-demand products, and revenue trends.
+          </li>
+          <li>
+            <strong>Inventory Optimization</strong><br>
+            Monitor inventory levels, identify overstocked or understocked items,
+            and minimize waste through predictive insights.
+          </li>
+          <li>
+            <strong>Real-Time Decision Support</strong><br>
+            Deliver a dynamic and interactive dashboard to assist store managers
+            in making timely, informed decisions.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Card: Technical Architecture -->
+      <div class="card">
+        <h2>Technical Architecture</h2>
+        <p>
+          <strong>Data Ingestion and Storage</strong><br>
+          SQL Database: Centralized store transaction and inventory data for
+          structured querying and management.<br>
+          ETL Pipeline: Developed ETL workflows using SQL and Python to extract, clean,
+          and transform data for analytics.
+        </p>
+        <p>
+          <strong>Data Processing and Analytics</strong><br>
+          Python Scripts: Used for data preprocessing, cleaning, and feature engineering
+          to prepare datasets for analysis.<br>
+          Predictive Analytics: Implemented trend analysis to forecast sales and
+          inventory requirements.
+        </p>
+        <p>
+          <strong>Dashboard Development</strong><br>
+          Power BI: Designed an interactive dashboard with real-time visualizations
+          and drill-down capabilities for:
+        </p>
+        <ul>
+          <li>Sales trends by product, category, and time period.</li>
+          <li>Inventory levels, turnover rates, and replenishment recommendations.</li>
+          <li>Key performance metrics (KPIs) like revenue growth, stockouts, and returns.</li>
+        </ul>
+        <p>
+          <strong>Visualization Features</strong><br>
+          Filterable views for different store locations, product categories, and time ranges.<br>
+          Alerts for low inventory levels and potential overstock situations.
+        </p>
+      </div>
+
+      <!-- Card: Implementation Details -->
+      <div class="card">
+        <h2>Implementation Details</h2>
+        <p>
+          <strong>Data Pipeline</strong><br>
+          Designed SQL queries to retrieve and aggregate transactional data from a retail database.
+          Used Python for data cleaning, handling missing values, and preparing structured
+          datasets for Power BI.
+        </p>
+        <p>
+          <strong>Dashboard Features</strong><br>
+          <em>Sales Analytics:</em> Visualized sales by product category, region, and time frame
+          to identify top-performing products and sales trends.<br>
+          <em>Inventory Tracking:</em> Real-time tracking of inventory levels with automated alerts
+          for stock replenishment.<br>
+          <em>Forecasting:</em> Implemented predictive analytics using historical data to forecast
+          demand and optimize inventory.
+        </p>
+        <p>
+          <strong>User Interaction</strong><br>
+          Developed intuitive filter options in Power BI to allow users to drill down
+          into specific metrics or timeframes. Highlighted actionable KPIs like average
+          daily sales, product demand trends, and reorder points.
+        </p>
+        <p>
+          <strong>Optimization</strong><br>
+          Fine-tuned dashboard performance by optimizing DAX queries in Power BI.
+          Ensured smooth integration with real-time data updates for seamless decision-making.
+        </p>
+      </div>
+
+      <!-- Card: Project Highlights -->
+      <div class="card">
+        <h2>Project Highlights</h2>
+        <ul>
+          <li><strong>Interactive Insights</strong>: Delivered a user-friendly dashboard with dynamic filtering, 
+              drill-throughs, and real-time updates.</li>
+          <li><strong>Predictive Accuracy</strong>: Improved sales forecasting accuracy, enabling stores to minimize 
+              stockouts and optimize inventory levels.</li>
+          <li><strong>Data-Driven Decisions</strong>: Empowered stakeholders with actionable insights to enhance 
+              operational efficiency and profitability.</li>
+          <li><strong>Cross-Functional Integration</strong>: Bridged data from multiple sources (SQL, Python) into a 
+              unified, visually compelling platform.</li>
+        </ul>
+      </div>
+
+      <!-- Card: Challenges Faced & How They Were Addressed -->
+      <div class="card">
+        <h2>Challenges Faced &amp; How They Were Addressed</h2>
+        <p>
+          <strong>Data Quality Issues</strong><br>
+          Addressed inconsistencies and missing data using Python libraries (Pandas) for preprocessing.
+        </p>
+        <p>
+          <strong>Dashboard Performance</strong><br>
+          Optimized DAX formulas and reduced report size for faster dashboard loading and responsiveness.
+        </p>
+        <p>
+          <strong>Forecasting Limitations</strong><br>
+          Integrated additional historical data and adjusted models to improve trend analysis accuracy.
+        </p>
+      </div>
+
+      <!-- Card: Impact and Outcomes -->
+      <div class="card">
+        <h2>Impact and Outcomes</h2>
+        <ul>
+          <li><strong>Enhanced Decision-Making</strong>: Provided store managers with immediate access to KPIs for 
+              informed decisions.</li>
+          <li><strong>Improved Inventory Management</strong>: Reduced stockouts and overstock by accurately predicting 
+              future inventory needs.</li>
+          <li><strong>Operational Efficiency</strong>: Saved time by automating manual data processing and reporting tasks.</li>
+          <li><strong>Scalable Solution</strong>: Designed a flexible dashboard that can adapt to additional data sources 
+              and new business metrics.</li>
+        </ul>
+      </div>
+
+      <!-- Card: Technologies & Tools -->
+      <div class="card">
+        <h2>Technologies &amp; Tools</h2>
+        <ul>
+          <li><strong>Data Processing</strong>: SQL, Python (Pandas, NumPy)</li>
+          <li><strong>Visualization</strong>: Power BI (DAX, Power Query)</li>
+          <li><strong>Database Management</strong>: SQL Server / MySQL</li>
+          <li><strong>Analytics</strong>: Python-based predictive modeling for sales and inventory forecasting</li>
+        </ul>
+      </div>
+
+      <!-- Card: Conclusion -->
+      <div class="card">
+        <h2>Conclusion</h2>
+        <p>
+          This project demonstrates expertise in creating a seamless data pipeline and delivering
+          a dynamic, visually intuitive solution for retail analytics. By integrating SQL, Python,
+          and Power BI, the dashboard serves as a powerful tool for real-time sales tracking
+          and inventory management, enabling smarter decision-making and operational improvements
+          for retail store operations.
+        </p>
+      </div>
+    </div><!-- /.cards-container -->
+  </div><!-- /.container -->
+  <footer class="animate__animated animate__fadeInUp" style="text-align: center; padding: 20px 0; position: relative; bottom: 0; width: 100%;">
+    <p>&copy; 2025 Sanket Janger. All Rights Reserved.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Exploratory Analysis of Bank Stock Price Data</title>
+  <style>
+    /* Basic reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f9f9f9; /* light gray background */
+      font-family: Arial, sans-serif;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Container for entire page content */
+    .container {
+      max-width: 900px;  /* Adjust to preference */
+      margin: 2rem auto; /* Centers the container */
+      padding: 0 1rem;   /* Side padding */
+    }
+
+    /* Large page heading */
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+
+    /*
+      Cards container:
+      Hover effect that scales down all cards slightly,
+      except the hovered one, which remains at scale(1).
+    */
+    .cards-container {
+      display: grid;
+      grid-template-columns: 1fr; /* single column by default */
+      gap: 1rem;
+    }
+    .cards-container:hover .card {
+      transform: scale(0.95);
+      transition: transform 0.3s ease;
+    }
+    .cards-container .card:hover {
+      transform: scale(1);
+      z-index: 1; /* brings hovered card above the others */
+    }
+
+    /* Individual card styling */
+    .card {
+      background-color: #fff;
+      padding: 2rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border-radius: 4px;
+      transition: transform 0.3s ease; /* smooth scale transition */
+    }
+
+    .card h2 {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      color: #333;
+    }
+
+    .card p {
+      margin-bottom: 1rem;
+    }
+
+    .card ul {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+      list-style-type: disc;
+    }
+
+    .card li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Highlighted subhead text (optional) */
+    strong {
+      color: #0077b6; 
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Back to Portfolio Link -->
+    <div style="margin-bottom: 1rem;">
+      <a href="index.html" style="text-decoration: none; color: #0077b6; font-weight: 600;">
+        ← Back to Portfolio
+      </a>
+    </div>
+
+    <!-- Page Title -->
+    <h1>
+      Exploratory Analysis of Bank Stock Price Data<br>
+      (Market Trends, Price Movement Patterns, and Risk Factors)
+    </h1>
+
+    <!-- Cards Container -->
+    <div class="cards-container">
+      <!-- Card: Project Overview -->
+      <div class="card">
+        <h2>Project Overview</h2>
+        <p>
+          In this independent project, I conducted an exploratory analysis of historical bank stock price data 
+          to identify emerging market trends and price movement patterns. By combining statistical methods 
+          with robust data visualization, I uncovered key market drivers and financial indicators that shape 
+          stock performance. The findings offered actionable insights into investment opportunities and 
+          potential risk factors, providing a more informed perspective on the banking sector.
+        </p>
+      </div>
+
+      <!-- Card: Key Objectives -->
+      <div class="card">
+        <h2>Key Objectives</h2>
+        <ul>
+          <li>
+            <strong>Market Trend Identification</strong><br>
+            Explore historical stock price data to highlight trends and cyclical behaviors.<br>
+            Understand how external market drivers (e.g., economic indicators, interest rates) 
+            influence bank stock prices.
+          </li>
+          <li>
+            <strong>Price Movement Patterns</strong><br>
+            Examine time-series data to detect short-term and long-term fluctuations.<br>
+            Analyze volatility and identify patterns that signal potential shifts in market sentiment.
+          </li>
+          <li>
+            <strong>Actionable Investment Insights</strong><br>
+            Translate observations into tangible guidelines for stakeholders or investors.<br>
+            Highlight critical risk factors and market conditions affecting overall stock performance.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Card: Technical Approach -->
+      <div class="card">
+        <h2>Technical Approach</h2>
+        <p>
+          <strong>Data Collection &amp; Cleaning</strong><br>
+          <em>Data Sources:</em> Acquired historical stock price data from publicly available APIs or financial market databases.<br>
+          <em>Preprocessing:</em> Handled missing values, standardized date formats, and ensured data consistency for time-series analysis.
+        </p>
+        <p>
+          <strong>Exploratory Data Analysis (EDA)</strong><br>
+          <em>Statistical Techniques:</em> Calculated descriptive statistics and assessed stationarity/normality of time series.<br>
+          <em>Correlation Analysis:</em> Explored relationships between stock prices and macroeconomic indicators.<br>
+          <em>Trend Analysis &amp; Seasonality:</em> Utilized rolling means, moving averages, and seasonal decomposition.
+        </p>
+        <p>
+          <strong>Data Visualization</strong><br>
+          Time-Series Plots: Showed daily/weekly/monthly closing prices.<br>
+          Volatility Analysis: Visualized fluctuations via Bollinger Bands or similar indicators.<br>
+          Heatmaps &amp; Pairplots: Illustrated correlations among financial indicators and stock movements.
+        </p>
+        <p>
+          <strong>Insight Generation</strong><br>
+          <em>Risk Factor Identification:</em> Pinpointed external factors (e.g., interest rate changes) with heavy impact on valuations.<br>
+          <em>Performance Benchmarks:</em> Compared stock performance with sector indices or competitor banks.<br>
+          <em>Investment Recommendations:</em> Highlighted periods of volatility or undervaluation as potential entry/exit points.
+        </p>
+      </div>
+
+      <!-- Card: Project Highlights -->
+      <div class="card">
+        <h2>Project Highlights</h2>
+        <ul>
+          <li>
+            <strong>Comprehensive Analysis</strong>: Combined time-series exploration with correlation studies 
+            to form a holistic view of stock behavior.
+          </li>
+          <li>
+            <strong>Data-Driven Insights</strong>: Provided concrete evidence regarding market conditions influencing 
+            bank stock movement.
+          </li>
+          <li>
+            <strong>Actionable Findings</strong>: Recommended strategies and precautions for investors, focusing on timing 
+            and risk management.
+          </li>
+          <li>
+            <strong>Clear Visual Narratives</strong>: Leveraged plots and statistical graphs to communicate complex price 
+            trends effectively.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Card: Challenges Faced & How They Were Addressed -->
+      <div class="card">
+        <h2>Challenges Faced &amp; How They Were Addressed</h2>
+        <p>
+          <strong>Data Quality &amp; Gaps</strong><br>
+          <em>Solution</em>: Implemented data cleaning and interpolation to fill incomplete records without distorting key trends.
+        </p>
+        <p>
+          <strong>Volatility &amp; Unpredictability</strong><br>
+          <em>Solution</em>: Performed rolling volatility metrics and introduced macroeconomic indicators 
+          for deeper contextual analysis.
+        </p>
+        <p>
+          <strong>Ensuring Statistical Rigor</strong><br>
+          <em>Solution</em>: Cross-validated findings by comparing multiple measures 
+          (e.g., correlation vs. regression-based tests).
+        </p>
+      </div>
+
+      <!-- Card: Impact and Outcomes -->
+      <div class="card">
+        <h2>Impact and Outcomes</h2>
+        <ul>
+          <li><strong>Enhanced Market Understanding</strong>: Offered stakeholders a data-driven view of how bank stock prices respond to economic shifts.</li>
+          <li><strong>Risk Mitigation</strong>: Identified warning signals (e.g., volatility spikes) that help investors make timely decisions.</li>
+          <li><strong>Strategic Planning</strong>: Equipped analysts with frameworks to forecast market movements and optimize portfolios.</li>
+        </ul>
+      </div>
+
+      <!-- Card: Technologies & Tools -->
+      <div class="card">
+        <h2>Technologies &amp; Tools</h2>
+        <ul>
+          <li><strong>Programming &amp; Analysis</strong>: Python (Pandas, NumPy, SciPy)</li>
+          <li><strong>Visualization</strong>: Matplotlib, Seaborn, Plotly (for interactive charts)</li>
+          <li><strong>Statistical Techniques</strong>: Correlation Analysis, Stationarity Tests, Rolling Averages, Seasonal Decomposition</li>
+          <li><strong>Data Sourcing</strong>: Financial APIs, CSV/Excel data from finance portals</li>
+        </ul>
+      </div>
+
+      <!-- Card: Conclusion -->
+      <div class="card">
+        <h2>Conclusion</h2>
+        <p>
+          By applying rigorous exploratory data analysis and visualization techniques, this project 
+          unveiled critical insights into the banking sector’s stock price dynamics. The methodology 
+          underscores how global economic factors and financial indicators drive market movement, 
+          while also highlighting actionable strategies for risk management and profitable 
+          decision-making in the banking domain.
+        </p>
+      </div>
+    </div><!-- /.cards-container -->
+  </div><!-- /.container -->
+  <footer class="animate__animated animate__fadeInUp" style="text-align: center; padding: 20px 0; position: relative; bottom: 0; width: 100%;">
+    <p>&copy; 2025 Sanket Janger. All Rights Reserved.</p>
+</footer>
+</body>
+</html>
